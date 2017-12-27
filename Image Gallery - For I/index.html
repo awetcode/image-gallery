@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Gallery(for I)</title>
+<style>
+body,html{height:100%;text-align:center;}
+#image{height:90%;}
+#thumbs{width:100px;float:right;margin:center;}
+#thumbs img{width:100%;}
+</style>
+<script type="gallery.js"></script>
+<script type="text/javascript">
+
+	var image;
+	var images = ['images/apple.jpg','images/banana.jpg','images/coconut.jpg'];
+	
+	window.onload = function()
+	{
+	image = document.getElementById( 'image' );
+	image.src = images[0];	
+	}
+
+	function showImage( imageNumber )
+	{
+		image.src = images[ imageNumber ];
+		
+	}
+</script>
+</head>
+<body>
+	<img src="" id="image"/>
+    <div id="thumbs">
+    <!--show thumbnails with JS -->
+<script type="text/javascript">
+	for(var i in images)
+	{
+		document.write( '<img src ="' + images[i] + '"' + 'onclick="showImage('+ i +');"'
+			+ '/>' );
+	
+}
+</script>
+</body>
+</div>
+</html>
